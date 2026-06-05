@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus T&D Solutions | Protecting Grid Reliability</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <style>
+        /* --- BRAND COLORS & TYPOGRAPHY --- */
+        :root {
+            --primary-blue: #003865; /* Pantone 2955C */
+            --grid-green: #78be20;   /* Pantone 368C */
+            --light-grey: #f8f9fa;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            color: #333;
+        }
+
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+
+        /* --- CUSTOM UTILITY CLASSES --- */
+        .text-blue { color: var(--primary-blue) !important; }
+        .text-green { color: var(--grid-green) !important; }
+        .bg-blue { background-color: var(--primary-blue) !important; color: white; }
+        .bg-light-grey { background-color: var(--light-grey) !important; }
+
+        /* Custom Buttons */
+        .btn-green {
+            background-color: var(--grid-green);
+            color: white;
+            font-weight: bold;
+            border: none;
+        }
+        .btn-green:hover {
+            background-color: #65a11b;
+            color: white;
+        }
+        
+        .btn-outline-blue {
+            border: 2px solid var(--primary-blue);
+            color: var(--primary-blue);
+            font-weight: bold;
+        }
+        .btn-outline-blue:hover {
+            background-color: var(--primary-blue);
+            color: white;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero-section {
+            /* REPLACE URL with your 765 kV GIS Hall image */
+            background: linear-gradient(rgba(0, 56, 101, 0.8), rgba(0, 56, 101, 0.8)), url('images/hero-bg.jpg') center/cover;
+            color: white;
+            padding: 120px 0;
+            text-align: center;
+        }
+        .hero-section h1 { color: white; }
+        
+        /* --- CARDS & ICONS --- */
+        .service-card {
+            border: none;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            height: 100%;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-bottom: 4px solid var(--grid-green);
+        }
+        .icon-circle {
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary-blue);
+            color: var(--grid-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin: 0 auto 15px;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--primary-blue);
+            color: white;
+        }
+        footer a { color: var(--grid-green); text-decoration: none; }
+        footer a:hover { color: white; text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand text-blue fw-bold" href="#">NEXUS T&D</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#why-us">Why Nexus</a></li>
+                    <li class="nav-item"><a class="nav-link btn btn-green ms-3 px-3" href="#contact">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-section">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-3">Protecting Grid Reliability Through Engineering Excellence</h1>
+            <p class="lead mb-4">From Factory Acceptance Testing to Final Energization and Emergency Restoration, Nexus T&D Solutions safeguards the entire lifecycle of critical power infrastructure.</p>
+            <h4 class="text-green fw-bold mb-4">RELIABLE. AVAILABLE. RESILIENT.</h4>
+            <a href="#services" class="btn btn-green btn-lg me-2">Explore Services</a>
+            <a href="#contact" class="btn btn-outline-light btn-lg">Get in Touch</a>
+        </div>
+    </header>
+
+    <section id="about" class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4">
+                    <h2 class="mb-4">Who We Are</h2>
+                    <p>Nexus T&D Solutions Private Limited is a specialist engineering consultancy dedicated to enhancing the reliability, safety, and performance of high-voltage electrical infrastructure.</p>
+                    <p>We support utilities, EPC contractors, industries, and renewable developers throughout the complete lifecycle of AIS and GIS substations—from design verification and factory inspections to commissioning, maintenance, audits, and emergency restoration.</p>
+                </div>
+                <div class="col-lg-6">
+                    <img src="images/about-engineers.jpg" alt="Engineers inspecting equipment" class="img-fluid rounded shadow" placeholder="Insert Image Here">
+                </div>
+            </div>
+            
+            <div class="row mt-5 text-center">
+                <div class="col-md-3 mb-3">
+                    <div class="icon-circle"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h5 class="text-blue">Safety</h5>
+                    <p class="small">Safety in everything we do.</p>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <div class="icon-circle"><i class="fa-solid fa-check-double"></i></div>
+                    <h5 class="text-blue">Quality</h5>
+                    <p class="small">Adherence to international standards.</p>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <div class="icon-circle"><i class="fa-solid fa-clock-rotate-left"></i></div>
+                    <h5 class="text-blue">Reliability</h5>
+                    <p class="small">Ensuring long-term dependable operation.</p>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <div class="icon-circle"><i class="fa-solid fa-award"></i></div>
+                    <h5 class="text-blue">Excellence</h5>
+                    <p class="small">Driven by expertise and integrity.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-5 bg-light-grey">
+        <div class="container">
+            <h2 class="text-center mb-5">Specialized Services</h2>
+            <div class="row g-4">
+                
+                <div class="col-md-4">
+                    <div class="card service-card p-4 text-center">
+                        <i class="fa-solid fa-bolt text-green fa-3x mb-3"></i>
+                        <h4>AIS & GIS Lifecycle</h4>
+                        <p class="small text-muted">Installation supervision, FAT, SAT, commissioning, and emergency restoration across 72.5 kV to 765 kV.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card service-card p-4 text-center">
+                        <i class="fa-solid fa-tower-observation text-green fa-3x mb-3"></i>
+                        <h4>Asset Reliability & Protection</h4>
+                        <p class="small text-muted">Maintenance contracts, condition assessments, protection audits, and disturbance analysis.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card service-card p-4 text-center">
+                        <i class="fa-solid fa-laptop-code text-green fa-3x mb-3"></i>
+                        <h4>Power System Studies</h4>
+                        <p class="small text-muted">Load flow, short circuit, transient stability, harmonic studies, and grid compliance analysis.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="why-us" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <img src="images/transmission-towers.jpg" alt="Transmission Towers" class="img-fluid rounded shadow" placeholder="Insert Image Here">
+                </div>
+                <div class="col-lg-6 mt-4 mt-lg-0">
+                    <h2 class="mb-4">Why Choose Nexus?</h2>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item border-0"><i class="fa-solid fa-circle-check text-green me-2"></i> Deep domain expertise in AIS & GIS systems (11 kV to 765 kV).</li>
+                        <li class="list-group-item border-0"><i class="fa-solid fa-circle-check text-green me-2"></i> Extensive utility and EPC experience.</li>
+                        <li class="list-group-item border-0"><i class="fa-solid fa-circle-check text-green me-2"></i> OEM Independent - Objective technical advice.</li>
+                        <li class="list-group-item border-0"><i class="fa-solid fa-circle-check text-green me-2"></i> Rapid response for emergency restoration.</li>
+                        <li class="list-group-item border-0"><i class="fa-solid fa-circle-check text-green me-2"></i> Strong safety and quality culture.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <h4 class="text-white">NEXUS T&D SOLUTIONS PRIVATE LIMITED</h4>
+                    <p class="text-white-50 mt-3">Engineering Confidence. Operational Excellence.</p>
+                </div>
+                <div class="col-md-6">
+                    <h5 class="text-green mb-3">Get in Touch</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fa-solid fa-location-dot me-2"></i> 123, Power House Road, Chennai – 600 123, Tamil Nadu, India</li>
+                        <li class="mb-2"><i class="fa-solid fa-phone me-2"></i> +91 00000 00000</li>
+                        <li class="mb-2"><i class="fa-solid fa-envelope me-2"></i> <a href="mailto:info@nexustdsolutions.com">info@nexustdsolutions.com</a></li>
+                        <li class="mb-2"><i class="fa-solid fa-globe me-2"></i> <a href="http://www.nexustdsolutions.com">www.nexustdsolutions.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="border-secondary mt-4">
+            <div class="text-center text-white-50 small">
+                &copy; 2026 Nexus T&D Solutions Private Limited. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
