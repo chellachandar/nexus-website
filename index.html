@@ -1,15 +1,30 @@
+To elevate the design to a truly stunning, high-end corporate standard, I have completely overhauled the visual architecture. This version leverages modern web design principles used by Fortune 500 engineering firms.
+
+Here is what I have implemented using full control of the layout and styling based on your brochure:
+
+* **Full Company Name:** The navigation bar now proudly displays "NEXUS T&D SOLUTIONS PRIVATE LIMITED" in a sharp, bold layout.
+
+
+* **Premium Image Presentation:** Instead of plain squares, images are now treated with architectural framing. The hero image features a dynamic dark gradient overlay to make the white text pop. The supporting images feature offset structural borders and soft drop shadows to give the page depth.
+
+
+* **Modern Typography & Spacing:** I have integrated 'Montserrat' for powerful, geometric headings and 'Inter' for highly readable body text. The spacing (padding/margins) has been expanded to let the content breathe.
+* **Interactive Elements:** Subtle CSS hover animations on the service cards and buttons provide a responsive, polished feel without being overwhelming.
+
+Replace your entire `index.html` file with this master code:
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nexus T&D Solutions</title>
+    <title>Nexus T&D Solutions Private Limited</title>
     
-    <!-- Clean Corporate Fonts: Inter -->
+    <!-- Premium Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
     
     <!-- Bootstrap 5 CSS CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -18,251 +33,328 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        /* --- SEL MINIMALIST CORPORATE BRANDING --- */
+        /* --- MASTER CORPORATE VARIABLES --- */
         :root {
-            --sel-blue: #003366; 
-            --sel-light-blue: #00509e;
-            --sel-grey: #f4f5f7;
-            --border-color: #e5e7eb;
+            --nexus-navy: #002147;      /* Deep authoritative blue */
+            --nexus-blue: #003b73;      /* Vibrant corporate blue */
+            --nexus-green: #78be20;     /* Electric grid green */
+            --bg-light: #f8f9fa;        /* Soft background */
             --text-main: #333333;
-            --text-muted: #666666;
-            --grid-green: #78be20; /* Kept minimal for subtle accents */
+            --text-muted: #6c757d;
         }
 
         body {
-            font-family: 'Inter', Arial, sans-serif;
+            font-family: 'Inter', sans-serif;
             color: var(--text-main);
-            line-height: 1.6;
             background-color: #ffffff;
+            line-height: 1.7;
             -webkit-font-smoothing: antialiased;
         }
 
-        h1, h2, h3, h4, h5, h6 {
-            color: var(--sel-blue);
+        h1, h2, h3, h4, h5, .brand-font {
+            font-family: 'Montserrat', sans-serif;
             font-weight: 700;
-            margin-bottom: 1rem;
+            color: var(--nexus-navy);
         }
 
-        /* Typography matching SEL clean style */
-        .section-heading {
-            font-size: 2.25rem;
-            letter-spacing: -0.5px;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 1rem;
-            margin-bottom: 2rem;
-        }
-
-        .text-sel-blue { color: var(--sel-blue) !important; }
-
-        /* --- NAVBAR --- */
+        /* --- NAVIGATION OVERHAUL --- */
         .navbar {
-            padding: 1.5rem 0;
+            padding: 1.2rem 0;
             background-color: #ffffff;
-            border-bottom: 1px solid var(--border-color);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--nexus-green);
         }
         .navbar-brand {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--sel-blue) !important;
+            font-size: 1.35rem;
             letter-spacing: 0.5px;
+            color: var(--nexus-navy) !important;
+            text-transform: uppercase;
         }
         .nav-link {
             font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             color: var(--text-main) !important;
-            margin: 0 1rem;
-            font-size: 0.95rem;
-            transition: color 0.2s ease;
+            margin-left: 1.5rem;
+            transition: color 0.3s ease;
         }
-        .nav-link:hover { color: var(--sel-light-blue) !important; }
+        .nav-link:hover {
+            color: var(--nexus-green) !important;
+        }
 
-        /* --- HERO SECTION (Split Layout) --- */
-        .hero-section {
-            padding: 4rem 0;
+        /* --- BUTTONS --- */
+        .btn-nexus {
+            background-color: var(--nexus-green);
+            color: #ffffff;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 14px 32px;
+            border: none;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(120, 190, 32, 0.3);
+        }
+        .btn-nexus:hover {
+            background-color: #65a11b;
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(120, 190, 32, 0.4);
+        }
+        .btn-outline-nexus {
+            background-color: transparent;
+            color: #ffffff;
+            border: 2px solid #ffffff;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 12px 30px;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+        .btn-outline-nexus:hover {
             background-color: #ffffff;
+            color: var(--nexus-navy);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero-section {
+            position: relative;
+            padding: 180px 0 160px;
+            background: linear-gradient(135deg, rgba(0, 33, 71, 0.92) 0%, rgba(0, 59, 115, 0.8) 100%), url('hero-bg.jpg') center/cover no-repeat fixed;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
         }
         .hero-title {
-            font-size: 3rem;
-            line-height: 1.2;
-            color: var(--sel-blue);
+            color: #ffffff;
+            font-size: 4.5rem;
+            line-height: 1.1;
             margin-bottom: 1.5rem;
             letter-spacing: -1px;
         }
         .hero-subtitle {
+            color: #e0e0e0;
             font-size: 1.25rem;
-            color: var(--text-muted);
-            margin-bottom: 2.5rem;
             font-weight: 300;
+            max-width: 800px;
+            margin-bottom: 3rem;
         }
-        .hero-img-container {
+        .accent-line {
+            width: 80px;
+            height: 4px;
+            background-color: var(--nexus-green);
+            margin-bottom: 2rem;
+        }
+
+        /* --- ARCHITECTURAL IMAGE FRAMING --- */
+        .image-frame {
+            position: relative;
+            z-index: 1;
+        }
+        .image-frame::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
             width: 100%;
             height: 100%;
-            min-height: 400px;
-            background-color: var(--sel-grey);
-            border: 1px solid var(--border-color);
+            border: 4px solid var(--nexus-green);
+            z-index: -1;
+            border-radius: 2px;
+        }
+        .image-frame img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            border-radius: 2px;
+        }
+
+        /* --- SERVICES CARDS --- */
+        .service-grid {
+            margin-top: -80px;
+            position: relative;
+            z-index: 10;
+        }
+        .service-card {
+            background: #ffffff;
+            padding: 3rem 2rem;
+            height: 100%;
+            border-radius: 2px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border-top: 4px solid var(--nexus-blue);
+            transition: all 0.4s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-top-color: var(--nexus-green);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+        }
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--nexus-green);
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+
+        /* --- FEATURE BLOCKS (ABOUT & WHY US) --- */
+        .section-padding {
+            padding: 100px 0;
+        }
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+        .feature-icon {
+            flex-shrink: 0;
+            width: 45px;
+            height: 45px;
+            background-color: rgba(120, 190, 32, 0.1);
+            color: var(--nexus-green);
             display: flex;
             align-items: center;
             justify-content: center;
-            overflow: hidden;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            margin-right: 1rem;
         }
-        /* Using img tag instead of background-image to guarantee visibility */
-        .hero-img-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .feature-text h5 {
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+            color: var(--nexus-navy);
         }
-
-        /* --- SEL STYLE LINKS / BUTTONS --- */
-        .sel-link {
-            display: inline-flex;
-            align-items: center;
-            color: var(--sel-light-blue);
-            font-weight: 600;
-            text-decoration: none;
-            font-size: 1rem;
-            transition: all 0.2s ease;
-        }
-        .sel-link i {
-            margin-left: 8px;
-            transition: transform 0.2s ease;
-        }
-        .sel-link:hover {
-            color: var(--sel-blue);
-        }
-        .sel-link:hover i {
-            transform: translateX(4px);
-        }
-
-        .btn-sel-primary {
-            background-color: var(--sel-blue);
-            color: #ffffff;
-            border: none;
-            padding: 0.75rem 2rem;
-            font-weight: 600;
-            border-radius: 2px;
-            text-decoration: none;
-            display: inline-block;
-            transition: background-color 0.2s ease;
-        }
-        .btn-sel-primary:hover {
-            background-color: var(--sel-light-blue);
-            color: #ffffff;
-        }
-
-        /* --- CLEAN CARDS & SECTIONS --- */
-        .bg-light-section {
-            background-color: var(--sel-grey);
-            border-top: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .minimal-card {
-            background: #ffffff;
-            border: 1px solid var(--border-color);
-            padding: 2.5rem 2rem;
-            height: 100%;
-            transition: box-shadow 0.2s ease;
-        }
-        .minimal-card:hover {
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-        }
-        .minimal-card h4 {
-            font-size: 1.25rem;
-            margin-bottom: 1rem;
-        }
-        .minimal-card p {
-            color: var(--text-muted);
+        .feature-text p {
             font-size: 0.95rem;
+            color: var(--text-muted);
             margin-bottom: 0;
-        }
-
-        /* --- LISTS --- */
-        .minimal-list {
-            list-style: none;
-            padding: 0;
-        }
-        .minimal-list li {
-            position: relative;
-            padding-left: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--text-main);
-        }
-        .minimal-list li::before {
-            content: "•";
-            color: var(--sel-blue);
-            font-weight: bold;
-            font-size: 1.5rem;
-            position: absolute;
-            left: 0;
-            top: -6px;
         }
 
         /* --- FOOTER --- */
         footer {
-            background-color: var(--sel-blue);
+            background-color: var(--nexus-navy);
             color: #ffffff;
-            padding: 4rem 0 2rem;
+            padding: 80px 0 30px;
+            position: relative;
+            overflow: hidden;
         }
-        footer h5 {
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background-color: var(--nexus-green);
+        }
+        .footer-heading {
             color: #ffffff;
-            font-size: 1rem;
+            font-size: 1.2rem;
             margin-bottom: 1.5rem;
-            text-transform: uppercase;
             letter-spacing: 1px;
+            text-transform: uppercase;
         }
-        footer a {
-            color: #b0c4de;
+        .footer-text {
+            color: #aebacd;
+            font-size: 0.95rem;
+        }
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+        .footer-links a {
+            color: #aebacd;
             text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.2s ease;
+            transition: color 0.3s ease;
+            font-weight: 500;
         }
-        footer a:hover {
-            color: #ffffff;
+        .footer-links a:hover {
+            color: var(--nexus-green);
         }
-        footer .footer-bottom {
+        .footer-contact i {
+            color: var(--nexus-green);
+            width: 25px;
+        }
+        .copyright {
             border-top: 1px solid rgba(255,255,255,0.1);
-            margin-top: 3rem;
-            padding-top: 1.5rem;
+            padding-top: 20px;
+            margin-top: 60px;
+            color: #6c7c93;
             font-size: 0.85rem;
-            color: #b0c4de;
+            text-align: center;
         }
     </style>
 </head>
 <body>
 
-    <!-- NAVBAR -->
+    <!-- NAVIGATION -->
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="#">NEXUS T&D</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
+            <a class="navbar-brand brand-font" href="#">NEXUS T&D SOLUTIONS PRIVATE LIMITED</a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <i class="fa-solid fa-bars fs-4 text-dark"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-center">
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
                     <li class="nav-item"><a class="nav-link" href="#why-us">Why Nexus</a></li>
-                    <li class="nav-item ms-lg-3"><a class="btn-sel-primary" href="#contact">Contact Us</a></li>
+                    <li class="nav-item ms-lg-4 mt-3 mt-lg-0"><a class="btn-nexus" href="#contact">Contact Us</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- HERO SECTION (Split Layout) -->
+    <!-- HERO SECTION -->
     <section class="hero-section">
-        <div class="container">
-            <div class="row align-items-center g-5">
-                <div class="col-lg-6">
+        <div class="container hero-content">
+            <div class="row">
+                <div class="col-lg-9">
+                    <div class="accent-line"></div>
                     <h1 class="hero-title">Protecting Grid Reliability Through Engineering Excellence</h1>
                     <p class="hero-subtitle">From Factory Acceptance Testing to Final Energization and Emergency Restoration, Nexus T&D Solutions safeguards the entire lifecycle of critical power infrastructure.</p>
-                    <div class="d-flex align-items-center gap-4">
-                        <a href="#services" class="btn-sel-primary">Explore Services</a>
-                        <a href="#contact" class="sel-link">Get in Touch <i class="fa-solid fa-arrow-right"></i></a>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="#services" class="btn-nexus">Explore Services</a>
+                        <a href="#contact" class="btn-outline-nexus">Get in Touch <i class="fa-solid fa-arrow-right ms-2"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <!-- Image Tag ensures it loads properly without CSS background path issues -->
-                    <div class="hero-img-container">
-                        <img src="hero-bg.jpg" alt="GIS Equipment Inspection" onerror="this.src='https://via.placeholder.com/800x600?text=Image+Not+Found'">
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES GRID (Overlapping Hero) -->
+    <section id="services">
+        <div class="container service-grid">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="service-card">
+                        <i class="fa-solid fa-bolt service-icon"></i>
+                        <h4>AIS & GIS Lifecycle</h4>
+                        <p class="text-muted mb-0">Installation supervision, FAT, SAT, commissioning, and emergency restoration across 72.5 kV to 765 kV.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="service-card">
+                        <i class="fa-solid fa-shield-halved service-icon"></i>
+                        <h4>Asset Reliability</h4>
+                        <p class="text-muted mb-0">Comprehensive maintenance contracts, condition assessments, protection audits, and disturbance analysis.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="service-card">
+                        <i class="fa-solid fa-network-wired service-icon"></i>
+                        <h4>Power System Studies</h4>
+                        <p class="text-muted mb-0">Load flow, short circuit, transient stability, harmonic studies, and critical grid compliance analysis.</p>
                     </div>
                 </div>
             </div>
@@ -270,68 +362,57 @@
     </section>
 
     <!-- ABOUT SECTION -->
-    <section id="about" class="py-5 bg-light-section">
-        <div class="container py-4">
-            <div class="row g-5">
-                <div class="col-lg-5">
-                    <h2 class="section-heading">Who We Are</h2>
-                    <p class="mb-4">Nexus T&D Solutions Private Limited is a specialist engineering consultancy dedicated to enhancing the reliability, safety, and performance of high-voltage electrical infrastructure.</p>
-                    <p class="text-muted">We support utilities, EPC contractors, industries, and renewable developers throughout the complete lifecycle of AIS and GIS substations—from design verification and factory inspections to commissioning, maintenance, audits, and emergency restoration.</p>
-                    <a href="#services" class="sel-link mt-3">Learn more about our work <i class="fa-solid fa-arrow-right"></i></a>
-                </div>
-                <div class="col-lg-7">
+    <section id="about" class="section-padding bg-light">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6 pe-lg-5">
+                    <h2 class="mb-4">Who We Are</h2>
+                    <p class="fs-5 mb-4 text-dark">Nexus T&D Solutions Private Limited is a specialist engineering consultancy dedicated to enhancing the reliability, safety, and performance of high-voltage electrical infrastructure.</p>
+                    <p class="text-muted mb-5">We support utilities, EPC contractors, industries, and renewable developers throughout the complete lifecycle of AIS and GIS substations—from design verification and factory inspections to commissioning, maintenance, audits, and emergency restoration.</p>
+                    
                     <div class="row g-4">
                         <div class="col-md-6">
-                            <div class="minimal-card">
-                                <h4>Safety</h4>
-                                <p>Uncompromising commitment to safety standards in everything we do.</p>
+                            <div class="feature-item">
+                                <div class="feature-icon"><i class="fa-solid fa-hard-hat"></i></div>
+                                <div class="feature-text">
+                                    <h5>Safety</h5>
+                                    <p>Uncompromising commitment in everything we do.</p>
+                                </div>
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="minimal-card">
-                                <h4>Quality</h4>
-                                <p>Strict adherence to international grid standards and procedures.</p>
+                            <div class="feature-item">
+                                <div class="feature-icon"><i class="fa-solid fa-certificate"></i></div>
+                                <div class="feature-text">
+                                    <h5>Quality</h5>
+                                    <p>Strict adherence to international grid standards.</p>
+                                </div>
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="minimal-card">
-                                <h4>Reliability</h4>
-                                <p>Ensuring long-term dependable operation for critical assets.</p>
+                            <div class="feature-item mb-md-0">
+                                <div class="feature-icon"><i class="fa-solid fa-lock"></i></div>
+                                <div class="feature-text">
+                                    <h5>Reliability</h5>
+                                    <p>Ensuring long-term dependable operation.</p>
+                                </div>
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="minimal-card">
-                                <h4>Excellence</h4>
-                                <p>Driven by deep technical expertise, precision, and integrity.</p>
+                            <div class="feature-item mb-0">
+                                <div class="feature-icon"><i class="fa-solid fa-star"></i></div>
+                                <div class="feature-text">
+                                    <h5>Excellence</h5>
+                                    <p>Driven by technical expertise & integrity.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SERVICES SECTION -->
-    <section id="services" class="py-5">
-        <div class="container py-5">
-            <h2 class="section-heading">Specialized Services</h2>
-            <div class="row g-4 mt-2">
-                <div class="col-lg-4">
-                    <div class="minimal-card">
-                        <h4 class="text-sel-blue">AIS & GIS Lifecycle</h4>
-                        <p>Installation supervision, FAT, SAT, commissioning, and emergency restoration across 72.5 kV to 765 kV.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="minimal-card">
-                        <h4 class="text-sel-blue">Asset Reliability</h4>
-                        <p>Comprehensive maintenance contracts, condition assessments, protection audits, and disturbance analysis.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="minimal-card">
-                        <h4 class="text-sel-blue">Power System Studies</h4>
-                        <p>Load flow, short circuit, transient stability, harmonic studies, and critical grid compliance analysis.</p>
+                <div class="col-lg-6">
+                    <div class="image-frame ms-lg-4">
+                        <!-- Ensure your image file is exactly named about-engineers.jpg -->
+                        <img src="about-engineers.jpg" alt="Engineers inspecting GIS equipment">
                     </div>
                 </div>
             </div>
@@ -339,24 +420,49 @@
     </section>
 
     <!-- WHY CHOOSE US -->
-    <section id="why-us" class="py-5 bg-light-section">
-        <div class="container py-4">
+    <section id="why-us" class="section-padding">
+        <div class="container">
             <div class="row align-items-center g-5">
                 <div class="col-lg-6 order-2 order-lg-1">
-                    <div class="hero-img-container" style="min-height: 500px;">
-                        <img src="transmission-towers.jpg.png" alt="Transmission Towers" onerror="this.src='https://via.placeholder.com/800x600?text=Image+Not+Found'">
+                    <div class="image-frame me-lg-4">
+                        <!-- Adjusted to your exact file name -->
+                        <img src="transmission-towers.jpg.png" alt="High Voltage Transmission Towers">
                     </div>
                 </div>
                 <div class="col-lg-6 order-1 order-lg-2 ps-lg-5">
-                    <h2 class="section-heading border-0 mb-4">Why Choose Nexus?</h2>
-                    <ul class="minimal-list mb-4">
-                        <li>Deep domain expertise in AIS & GIS systems spanning 11 kV to 765 kV infrastructure.</li>
-                        <li>Extensive project portfolio supporting major utilities and EPC contractors worldwide.</li>
-                        <li>OEM Independent status, ensuring objective and entirely unbiased technical advice.</li>
-                        <li>Rapid response capabilities for critical emergency restoration and fault analysis.</li>
-                        <li>Uncompromising culture dedicated to operational safety and execution quality.</li>
-                    </ul>
-                    <a href="#contact" class="sel-link mt-2">Partner with us <i class="fa-solid fa-arrow-right"></i></a>
+                    <h2 class="mb-5">Why Choose Nexus?</h2>
+                    
+                    <div class="feature-item mb-4">
+                        <div class="feature-icon"><i class="fa-solid fa-check"></i></div>
+                        <div class="feature-text">
+                            <p class="fs-6 text-dark"><strong>Deep domain expertise</strong> in AIS & GIS systems spanning 11 kV to 765 kV infrastructure.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item mb-4">
+                        <div class="feature-icon"><i class="fa-solid fa-check"></i></div>
+                        <div class="feature-text">
+                            <p class="fs-6 text-dark"><strong>Extensive project portfolio</strong> supporting major utilities and EPC contractors worldwide.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item mb-4">
+                        <div class="feature-icon"><i class="fa-solid fa-check"></i></div>
+                        <div class="feature-text">
+                            <p class="fs-6 text-dark"><strong>OEM Independent status</strong>, ensuring objective and entirely unbiased technical advice.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item mb-4">
+                        <div class="feature-icon"><i class="fa-solid fa-check"></i></div>
+                        <div class="feature-text">
+                            <p class="fs-6 text-dark"><strong>Rapid response capabilities</strong> for critical emergency restoration and fault analysis.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fa-solid fa-check"></i></div>
+                        <div class="feature-text">
+                            <p class="fs-6 text-dark"><strong>Uncompromising culture</strong> dedicated to operational safety and execution quality.</p>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -366,36 +472,50 @@
     <footer id="contact">
         <div class="container">
             <div class="row g-5">
-                <div class="col-lg-4">
-                    <h4 class="text-white mb-4">NEXUS T&D</h4>
-                    <p style="color: #b0c4de; font-size: 0.95rem;">Engineering Confidence. Operational Excellence.<br>Your trusted technical partner for transmission and distribution asset owners.</p>
+                <div class="col-lg-4 pe-lg-5">
+                    <h4 class="brand-font text-white mb-4">NEXUS T&D</h4>
+                    <p class="footer-text">Engineering Confidence. Operational Excellence. Your trusted technical partner for transmission and distribution asset owners.</p>
                 </div>
+                
                 <div class="col-lg-2 col-md-4">
-                    <h5>Links</h5>
-                    <ul class="list-unstyled" style="line-height: 2;">
+                    <h5 class="footer-heading">Company</h5>
+                    <ul class="footer-links">
                         <li><a href="#about">About Us</a></li>
                         <li><a href="#services">Our Services</a></li>
                         <li><a href="#why-us">Why Choose Us</a></li>
                     </ul>
                 </div>
+                
                 <div class="col-lg-3 col-md-4">
-                    <h5>Contact</h5>
-                    <ul class="list-unstyled" style="line-height: 2;">
-                        <li><a href="mailto:info@nexustdsolutions.com">info@nexustdsolutions.com</a></li>
-                        <li><span style="color: #b0c4de;">+91 00000 00000</span></li>
-                        <li><a href="http://www.nexustdsolutions.com">www.nexustdsolutions.com</a></li>
+                    <h5 class="footer-heading">Contact Us</h5>
+                    <ul class="footer-links footer-contact">
+                        <li class="d-flex mb-3">
+                            <i class="fa-solid fa-envelope mt-1"></i>
+                            <a href="mailto:info@nexustdsolutions.com">info@nexustdsolutions.com</a>
+                        </li>
+                        <li class="d-flex mb-3">
+                            <i class="fa-solid fa-phone mt-1"></i>
+                            <span class="footer-text">+91 00000 00000</span>
+                        </li>
+                        <li class="d-flex">
+                            <i class="fa-solid fa-globe mt-1"></i>
+                            <a href="http://www.nexustdsolutions.com">www.nexustdsolutions.com</a>
+                        </li>
                     </ul>
                 </div>
+                
                 <div class="col-lg-3 col-md-4">
-                    <h5>Corporate Office</h5>
-                    <p style="color: #b0c4de; font-size: 0.9rem;">
-                        123, Power House Road,<br>
-                        Chennai – 600 123,<br>
-                        Tamil Nadu, India
-                    </p>
+                    <h5 class="footer-heading">Corporate Office</h5>
+                    <ul class="footer-links footer-contact">
+                        <li class="d-flex">
+                            <i class="fa-solid fa-location-dot mt-1"></i>
+                            <span class="footer-text">123, Power House Road,<br>Chennai – 600 123,<br>Tamil Nadu, India</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
-            <div class="text-center footer-bottom">
+            
+            <div class="copyright">
                 &copy; 2026 Nexus T&D Solutions Private Limited. All Rights Reserved.
             </div>
         </div>
