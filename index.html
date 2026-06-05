@@ -1,18 +1,3 @@
-To elevate the design to a truly stunning, high-end corporate standard, I have completely overhauled the visual architecture. This version leverages modern web design principles used by Fortune 500 engineering firms.
-
-Here is what I have implemented using full control of the layout and styling based on your brochure:
-
-* **Full Company Name:** The navigation bar now proudly displays "NEXUS T&D SOLUTIONS PRIVATE LIMITED" in a sharp, bold layout.
-
-
-* **Premium Image Presentation:** Instead of plain squares, images are now treated with architectural framing. The hero image features a dynamic dark gradient overlay to make the white text pop. The supporting images feature offset structural borders and soft drop shadows to give the page depth.
-
-
-* **Modern Typography & Spacing:** I have integrated 'Montserrat' for powerful, geometric headings and 'Inter' for highly readable body text. The spacing (padding/margins) has been expanded to let the content breathe.
-* **Interactive Elements:** Subtle CSS hover animations on the service cards and buttons provide a responsive, polished feel without being overwhelming.
-
-Replace your entire `index.html` file with this master code:
-
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -29,16 +14,16 @@ Replace your entire `index.html` file with this master code:
     <!-- Bootstrap 5 CSS CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     
-    <!-- FontAwesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Bootstrap Icons (More reliable than FontAwesome on GitHub Pages) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
     <style>
         /* --- MASTER CORPORATE VARIABLES --- */
         :root {
-            --nexus-navy: #002147;      /* Deep authoritative blue */
-            --nexus-blue: #003b73;      /* Vibrant corporate blue */
-            --nexus-green: #78be20;     /* Electric grid green */
-            --bg-light: #f8f9fa;        /* Soft background */
+            --nexus-navy: #002147;
+            --nexus-blue: #003b73;
+            --nexus-green: #78be20;
+            --bg-light: #f8f9fa;
             --text-main: #333333;
             --text-muted: #6c757d;
         }
@@ -57,7 +42,7 @@ Replace your entire `index.html` file with this master code:
             color: var(--nexus-navy);
         }
 
-        /* --- NAVIGATION OVERHAUL --- */
+        /* --- NAVIGATION --- */
         .navbar {
             padding: 1.2rem 0;
             background-color: #ffffff;
@@ -97,6 +82,8 @@ Replace your entire `index.html` file with this master code:
             border-radius: 2px;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(120, 190, 32, 0.3);
+            text-decoration: none;
+            display: inline-block;
         }
         .btn-nexus:hover {
             background-color: #65a11b;
@@ -116,6 +103,8 @@ Replace your entire `index.html` file with this master code:
             padding: 12px 30px;
             border-radius: 2px;
             transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
         }
         .btn-outline-nexus:hover {
             background-color: #ffffff;
@@ -126,7 +115,10 @@ Replace your entire `index.html` file with this master code:
         .hero-section {
             position: relative;
             padding: 180px 0 160px;
-            background: linear-gradient(135deg, rgba(0, 33, 71, 0.92) 0%, rgba(0, 59, 115, 0.8) 100%), url('hero-bg.jpg') center/cover no-repeat fixed;
+            /* Reduced gradient opacity so the image is clearly visible */
+            background: linear-gradient(135deg, rgba(0, 33, 71, 0.75) 0%, rgba(0, 59, 115, 0.6) 100%), url('hero-bg.jpg') center/cover no-repeat;
+            background-attachment: fixed;
+            background-color: var(--nexus-navy); /* Fallback color */
         }
         .hero-content {
             position: relative;
@@ -140,11 +132,12 @@ Replace your entire `index.html` file with this master code:
             letter-spacing: -1px;
         }
         .hero-subtitle {
-            color: #e0e0e0;
+            color: #f8f9fa;
             font-size: 1.25rem;
-            font-weight: 300;
+            font-weight: 400;
             max-width: 800px;
             margin-bottom: 3rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5); /* Enhances readability over the image */
         }
         .accent-line {
             width: 80px;
@@ -157,24 +150,26 @@ Replace your entire `index.html` file with this master code:
         .image-frame {
             position: relative;
             z-index: 1;
+            padding: 15px;
+            background: white;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
         }
-        .image-frame::before {
+        .image-frame::after {
             content: '';
             position: absolute;
-            top: -20px;
-            left: -20px;
-            width: 100%;
-            height: 100%;
-            border: 4px solid var(--nexus-green);
+            top: -15px;
+            right: -15px;
+            width: 50%;
+            height: 50%;
+            border-top: 4px solid var(--nexus-green);
+            border-right: 4px solid var(--nexus-green);
             z-index: -1;
-            border-radius: 2px;
         }
         .image-frame img {
             width: 100%;
             height: auto;
             object-fit: cover;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-            border-radius: 2px;
+            display: block;
         }
 
         /* --- SERVICES CARDS --- */
@@ -204,7 +199,7 @@ Replace your entire `index.html` file with this master code:
             display: inline-block;
         }
 
-        /* --- FEATURE BLOCKS (ABOUT & WHY US) --- */
+        /* --- FEATURE BLOCKS --- */
         .section-padding {
             padding: 100px 0;
         }
@@ -212,6 +207,14 @@ Replace your entire `index.html` file with this master code:
             display: flex;
             align-items: flex-start;
             margin-bottom: 1.5rem;
+            padding: 15px;
+            background: #ffffff;
+            border-left: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+        .feature-item:hover {
+            border-left-color: var(--nexus-green);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
         .feature-icon {
             flex-shrink: 0;
@@ -224,7 +227,7 @@ Replace your entire `index.html` file with this master code:
             justify-content: center;
             border-radius: 50%;
             font-size: 1.2rem;
-            margin-right: 1rem;
+            margin-right: 1.2rem;
         }
         .feature-text h5 {
             font-size: 1.1rem;
@@ -284,6 +287,7 @@ Replace your entire `index.html` file with this master code:
         .footer-contact i {
             color: var(--nexus-green);
             width: 25px;
+            font-size: 1.1rem;
         }
         .copyright {
             border-top: 1px solid rgba(255,255,255,0.1);
@@ -302,7 +306,7 @@ Replace your entire `index.html` file with this master code:
         <div class="container">
             <a class="navbar-brand brand-font" href="#">NEXUS T&D SOLUTIONS PRIVATE LIMITED</a>
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <i class="fa-solid fa-bars fs-4 text-dark"></i>
+                <i class="bi bi-list fs-2 text-dark"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-center">
@@ -319,40 +323,40 @@ Replace your entire `index.html` file with this master code:
     <section class="hero-section">
         <div class="container hero-content">
             <div class="row">
-                <div class="col-lg-9">
+                <div class="col-lg-10">
                     <div class="accent-line"></div>
                     <h1 class="hero-title">Protecting Grid Reliability Through Engineering Excellence</h1>
                     <p class="hero-subtitle">From Factory Acceptance Testing to Final Energization and Emergency Restoration, Nexus T&D Solutions safeguards the entire lifecycle of critical power infrastructure.</p>
                     <div class="d-flex flex-wrap gap-3">
                         <a href="#services" class="btn-nexus">Explore Services</a>
-                        <a href="#contact" class="btn-outline-nexus">Get in Touch <i class="fa-solid fa-arrow-right ms-2"></i></a>
+                        <a href="#contact" class="btn-outline-nexus">Get in Touch <i class="bi bi-arrow-right ms-2"></i></a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SERVICES GRID (Overlapping Hero) -->
+    <!-- SERVICES GRID -->
     <section id="services">
         <div class="container service-grid">
             <div class="row g-4">
                 <div class="col-lg-4">
                     <div class="service-card">
-                        <i class="fa-solid fa-bolt service-icon"></i>
+                        <i class="bi bi-lightning-charge-fill service-icon"></i>
                         <h4>AIS & GIS Lifecycle</h4>
                         <p class="text-muted mb-0">Installation supervision, FAT, SAT, commissioning, and emergency restoration across 72.5 kV to 765 kV.</p>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="service-card">
-                        <i class="fa-solid fa-shield-halved service-icon"></i>
+                        <i class="bi bi-shield-fill-check service-icon"></i>
                         <h4>Asset Reliability</h4>
                         <p class="text-muted mb-0">Comprehensive maintenance contracts, condition assessments, protection audits, and disturbance analysis.</p>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="service-card">
-                        <i class="fa-solid fa-network-wired service-icon"></i>
+                        <i class="bi bi-diagram-3-fill service-icon"></i>
                         <h4>Power System Studies</h4>
                         <p class="text-muted mb-0">Load flow, short circuit, transient stability, harmonic studies, and critical grid compliance analysis.</p>
                     </div>
@@ -370,10 +374,10 @@ Replace your entire `index.html` file with this master code:
                     <p class="fs-5 mb-4 text-dark">Nexus T&D Solutions Private Limited is a specialist engineering consultancy dedicated to enhancing the reliability, safety, and performance of high-voltage electrical infrastructure.</p>
                     <p class="text-muted mb-5">We support utilities, EPC contractors, industries, and renewable developers throughout the complete lifecycle of AIS and GIS substations—from design verification and factory inspections to commissioning, maintenance, audits, and emergency restoration.</p>
                     
-                    <div class="row g-4">
+                    <div class="row g-3">
                         <div class="col-md-6">
                             <div class="feature-item">
-                                <div class="feature-icon"><i class="fa-solid fa-hard-hat"></i></div>
+                                <div class="feature-icon"><i class="bi bi-person-workspace"></i></div>
                                 <div class="feature-text">
                                     <h5>Safety</h5>
                                     <p>Uncompromising commitment in everything we do.</p>
@@ -382,7 +386,7 @@ Replace your entire `index.html` file with this master code:
                         </div>
                         <div class="col-md-6">
                             <div class="feature-item">
-                                <div class="feature-icon"><i class="fa-solid fa-certificate"></i></div>
+                                <div class="feature-icon"><i class="bi bi-award-fill"></i></div>
                                 <div class="feature-text">
                                     <h5>Quality</h5>
                                     <p>Strict adherence to international grid standards.</p>
@@ -391,7 +395,7 @@ Replace your entire `index.html` file with this master code:
                         </div>
                         <div class="col-md-6">
                             <div class="feature-item mb-md-0">
-                                <div class="feature-icon"><i class="fa-solid fa-lock"></i></div>
+                                <div class="feature-icon"><i class="bi bi-lock-fill"></i></div>
                                 <div class="feature-text">
                                     <h5>Reliability</h5>
                                     <p>Ensuring long-term dependable operation.</p>
@@ -400,7 +404,7 @@ Replace your entire `index.html` file with this master code:
                         </div>
                         <div class="col-md-6">
                             <div class="feature-item mb-0">
-                                <div class="feature-icon"><i class="fa-solid fa-star"></i></div>
+                                <div class="feature-icon"><i class="bi bi-star-fill"></i></div>
                                 <div class="feature-text">
                                     <h5>Excellence</h5>
                                     <p>Driven by technical expertise & integrity.</p>
@@ -411,8 +415,7 @@ Replace your entire `index.html` file with this master code:
                 </div>
                 <div class="col-lg-6">
                     <div class="image-frame ms-lg-4">
-                        <!-- Ensure your image file is exactly named about-engineers.jpg -->
-                        <img src="about-engineers.jpg" alt="Engineers inspecting GIS equipment">
+                        <img src="about-engineers.jpg" alt="Engineers inspecting GIS equipment" onerror="this.style.display='none'">
                     </div>
                 </div>
             </div>
@@ -425,39 +428,38 @@ Replace your entire `index.html` file with this master code:
             <div class="row align-items-center g-5">
                 <div class="col-lg-6 order-2 order-lg-1">
                     <div class="image-frame me-lg-4">
-                        <!-- Adjusted to your exact file name -->
-                        <img src="transmission-towers.jpg.png" alt="High Voltage Transmission Towers">
+                        <img src="transmission-towers.jpg.png" alt="High Voltage Transmission Towers" onerror="this.style.display='none'">
                     </div>
                 </div>
                 <div class="col-lg-6 order-1 order-lg-2 ps-lg-5">
                     <h2 class="mb-5">Why Choose Nexus?</h2>
                     
-                    <div class="feature-item mb-4">
-                        <div class="feature-icon"><i class="fa-solid fa-check"></i></div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="bi bi-check-circle-fill"></i></div>
                         <div class="feature-text">
                             <p class="fs-6 text-dark"><strong>Deep domain expertise</strong> in AIS & GIS systems spanning 11 kV to 765 kV infrastructure.</p>
                         </div>
                     </div>
-                    <div class="feature-item mb-4">
-                        <div class="feature-icon"><i class="fa-solid fa-check"></i></div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="bi bi-check-circle-fill"></i></div>
                         <div class="feature-text">
                             <p class="fs-6 text-dark"><strong>Extensive project portfolio</strong> supporting major utilities and EPC contractors worldwide.</p>
                         </div>
                     </div>
-                    <div class="feature-item mb-4">
-                        <div class="feature-icon"><i class="fa-solid fa-check"></i></div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="bi bi-check-circle-fill"></i></div>
                         <div class="feature-text">
                             <p class="fs-6 text-dark"><strong>OEM Independent status</strong>, ensuring objective and entirely unbiased technical advice.</p>
                         </div>
                     </div>
-                    <div class="feature-item mb-4">
-                        <div class="feature-icon"><i class="fa-solid fa-check"></i></div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="bi bi-check-circle-fill"></i></div>
                         <div class="feature-text">
                             <p class="fs-6 text-dark"><strong>Rapid response capabilities</strong> for critical emergency restoration and fault analysis.</p>
                         </div>
                     </div>
                     <div class="feature-item">
-                        <div class="feature-icon"><i class="fa-solid fa-check"></i></div>
+                        <div class="feature-icon"><i class="bi bi-check-circle-fill"></i></div>
                         <div class="feature-text">
                             <p class="fs-6 text-dark"><strong>Uncompromising culture</strong> dedicated to operational safety and execution quality.</p>
                         </div>
@@ -490,15 +492,15 @@ Replace your entire `index.html` file with this master code:
                     <h5 class="footer-heading">Contact Us</h5>
                     <ul class="footer-links footer-contact">
                         <li class="d-flex mb-3">
-                            <i class="fa-solid fa-envelope mt-1"></i>
+                            <i class="bi bi-envelope-fill mt-1 me-3"></i>
                             <a href="mailto:info@nexustdsolutions.com">info@nexustdsolutions.com</a>
                         </li>
                         <li class="d-flex mb-3">
-                            <i class="fa-solid fa-phone mt-1"></i>
+                            <i class="bi bi-telephone-fill mt-1 me-3"></i>
                             <span class="footer-text">+91 00000 00000</span>
                         </li>
                         <li class="d-flex">
-                            <i class="fa-solid fa-globe mt-1"></i>
+                            <i class="bi bi-globe mt-1 me-3"></i>
                             <a href="http://www.nexustdsolutions.com">www.nexustdsolutions.com</a>
                         </li>
                     </ul>
@@ -508,7 +510,7 @@ Replace your entire `index.html` file with this master code:
                     <h5 class="footer-heading">Corporate Office</h5>
                     <ul class="footer-links footer-contact">
                         <li class="d-flex">
-                            <i class="fa-solid fa-location-dot mt-1"></i>
+                            <i class="bi bi-geo-alt-fill mt-1 me-3"></i>
                             <span class="footer-text">123, Power House Road,<br>Chennai – 600 123,<br>Tamil Nadu, India</span>
                         </li>
                     </ul>
