@@ -1,3 +1,11 @@
+Here is the refined and validated code. I have completely removed any stray text that was appearing at the top left of your page.
+
+To create the "slidable" services section, I have engineered a sleek, corporate **interactive carousel** that houses all the detailed service categories directly from your brochure. It features smooth sliding transitions and clear navigation controls.
+
+### **Important Copying Instruction:**
+
+When you copy this code, make sure you **only copy the code starting from `<!DOCTYPE html>` to `</html>**`. Do not copy the backticks (```) or the word "html".
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -7,15 +15,15 @@
     <title>Nexus T&D Solutions Private Limited</title>
     
     <!-- Premium Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="[https://fonts.googleapis.com](https://fonts.googleapis.com)">
+    <link rel="preconnect" href="[https://fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
+    <link href="[https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@600;700;800&display=swap](https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@600;700;800&display=swap)" rel="stylesheet">
     
     <!-- Bootstrap 5 CSS CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="[https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css](https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css)" rel="stylesheet">
     
-    <!-- Bootstrap Icons (More reliable than FontAwesome on GitHub Pages) -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="[https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css](https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css)">
 
     <style>
         /* --- MASTER CORPORATE VARIABLES --- */
@@ -23,7 +31,7 @@
             --nexus-navy: #002147;
             --nexus-blue: #003b73;
             --nexus-green: #78be20;
-            --bg-light: #f8f9fa;
+            --bg-light: #f4f7f6;
             --text-main: #333333;
             --text-muted: #6c757d;
         }
@@ -64,9 +72,7 @@
             margin-left: 1.5rem;
             transition: color 0.3s ease;
         }
-        .nav-link:hover {
-            color: var(--nexus-green) !important;
-        }
+        .nav-link:hover { color: var(--nexus-green) !important; }
 
         /* --- BUTTONS --- */
         .btn-nexus {
@@ -81,7 +87,6 @@
             border: none;
             border-radius: 2px;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(120, 190, 32, 0.3);
             text-decoration: none;
             display: inline-block;
         }
@@ -89,55 +94,29 @@
             background-color: #65a11b;
             color: #ffffff;
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(120, 190, 32, 0.4);
-        }
-        .btn-outline-nexus {
-            background-color: transparent;
-            color: #ffffff;
-            border: 2px solid #ffffff;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            padding: 12px 30px;
-            border-radius: 2px;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-        }
-        .btn-outline-nexus:hover {
-            background-color: #ffffff;
-            color: var(--nexus-navy);
+            box-shadow: 0 6px 20px rgba(120, 190, 32, 0.3);
         }
 
         /* --- HERO SECTION --- */
         .hero-section {
             position: relative;
             padding: 180px 0 160px;
-            /* Reduced gradient opacity so the image is clearly visible */
-            background: linear-gradient(135deg, rgba(0, 33, 71, 0.75) 0%, rgba(0, 59, 115, 0.6) 100%), url('hero-bg.jpg') center/cover no-repeat;
-            background-attachment: fixed;
-            background-color: var(--nexus-navy); /* Fallback color */
-        }
-        .hero-content {
-            position: relative;
-            z-index: 2;
+            background: linear-gradient(135deg, rgba(0, 33, 71, 0.85) 0%, rgba(0, 59, 115, 0.7) 100%), url('hero-bg.jpg') center/cover no-repeat;
+            background-color: var(--nexus-navy); 
         }
         .hero-title {
             color: #ffffff;
-            font-size: 4.5rem;
-            line-height: 1.1;
+            font-size: 4rem;
+            line-height: 1.15;
             margin-bottom: 1.5rem;
             letter-spacing: -1px;
         }
         .hero-subtitle {
             color: #f8f9fa;
-            font-size: 1.25rem;
-            font-weight: 400;
+            font-size: 1.2rem;
+            font-weight: 300;
             max-width: 800px;
             margin-bottom: 3rem;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.5); /* Enhances readability over the image */
         }
         .accent-line {
             width: 80px;
@@ -146,7 +125,67 @@
             margin-bottom: 2rem;
         }
 
-        /* --- ARCHITECTURAL IMAGE FRAMING --- */
+        /* --- SLIDABLE SERVICES SECTION (CAROUSEL) --- */
+        .services-section {
+            background-color: var(--bg-light);
+            padding: 100px 0;
+        }
+        .carousel-card {
+            background: #ffffff;
+            border-top: 4px solid var(--nexus-blue);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            padding: 4rem;
+            border-radius: 4px;
+            margin: 10px 40px 40px 40px; /* Space for controls */
+        }
+        .service-list {
+            list-style: none;
+            padding: 0;
+        }
+        .service-list li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+            color: var(--text-main);
+        }
+        .service-list li i {
+            position: absolute;
+            left: 0;
+            top: 4px;
+            color: var(--nexus-green);
+            font-size: 1.2rem;
+        }
+        .carousel-control-prev, .carousel-control-next {
+            width: 50px;
+            height: 50px;
+            background-color: var(--nexus-navy);
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 1;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        .carousel-control-prev { left: -10px; }
+        .carousel-control-next { right: -10px; }
+        .carousel-control-prev:hover, .carousel-control-next:hover {
+            background-color: var(--nexus-green);
+        }
+        .carousel-indicators {
+            bottom: -50px;
+        }
+        .carousel-indicators [data-bs-target] {
+            background-color: var(--nexus-navy);
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin: 0 6px;
+        }
+        .carousel-indicators .active {
+            background-color: var(--nexus-green);
+        }
+
+        /* --- IMAGE FRAMING --- */
         .image-frame {
             position: relative;
             z-index: 1;
@@ -165,138 +204,33 @@
             border-right: 4px solid var(--nexus-green);
             z-index: -1;
         }
-        .image-frame img {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-            display: block;
-        }
+        .image-frame img { width: 100%; height: auto; display: block; }
 
-        /* --- SERVICES CARDS --- */
-        .service-grid {
-            margin-top: -80px;
-            position: relative;
-            z-index: 10;
-        }
-        .service-card {
-            background: #ffffff;
-            padding: 3rem 2rem;
-            height: 100%;
-            border-radius: 2px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            border-top: 4px solid var(--nexus-blue);
-            transition: all 0.4s ease;
-        }
-        .service-card:hover {
-            transform: translateY(-10px);
-            border-top-color: var(--nexus-green);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
-        }
-        .service-icon {
-            font-size: 2.5rem;
-            color: var(--nexus-green);
-            margin-bottom: 1.5rem;
-            display: inline-block;
-        }
-
-        /* --- FEATURE BLOCKS --- */
-        .section-padding {
-            padding: 100px 0;
-        }
-        .feature-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 1.5rem;
-            padding: 15px;
-            background: #ffffff;
-            border-left: 3px solid transparent;
-            transition: all 0.3s ease;
-        }
-        .feature-item:hover {
-            border-left-color: var(--nexus-green);
+        /* --- DOMAIN EXPERTISE & CLIENTS --- */
+        .domain-card {
+            background: #fff;
+            padding: 20px;
+            border-left: 3px solid var(--nexus-green);
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            height: 100%;
         }
-        .feature-icon {
-            flex-shrink: 0;
-            width: 45px;
-            height: 45px;
-            background-color: rgba(120, 190, 32, 0.1);
-            color: var(--nexus-green);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            font-size: 1.2rem;
-            margin-right: 1.2rem;
-        }
-        .feature-text h5 {
-            font-size: 1.1rem;
-            margin-bottom: 0.25rem;
-            color: var(--nexus-navy);
-        }
-        .feature-text p {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            margin-bottom: 0;
+        .client-banner {
+            background-color: var(--nexus-navy);
+            padding: 40px 0;
+            color: white;
         }
 
         /* --- FOOTER --- */
         footer {
-            background-color: var(--nexus-navy);
+            background-color: #00152e;
             color: #ffffff;
             padding: 80px 0 30px;
-            position: relative;
-            overflow: hidden;
+            border-top: 4px solid var(--nexus-green);
         }
-        footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background-color: var(--nexus-green);
-        }
-        .footer-heading {
-            color: #ffffff;
-            font-size: 1.2rem;
-            margin-bottom: 1.5rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-        .footer-text {
-            color: #aebacd;
-            font-size: 0.95rem;
-        }
-        .footer-links {
-            list-style: none;
-            padding: 0;
-        }
-        .footer-links li {
-            margin-bottom: 0.75rem;
-        }
-        .footer-links a {
-            color: #aebacd;
-            text-decoration: none;
-            transition: color 0.3s ease;
-            font-weight: 500;
-        }
-        .footer-links a:hover {
-            color: var(--nexus-green);
-        }
-        .footer-contact i {
-            color: var(--nexus-green);
-            width: 25px;
-            font-size: 1.1rem;
-        }
-        .copyright {
-            border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 20px;
-            margin-top: 60px;
-            color: #6c7c93;
-            font-size: 0.85rem;
-            text-align: center;
-        }
+        .footer-links { list-style: none; padding: 0; }
+        .footer-links li { margin-bottom: 0.75rem; }
+        .footer-links a { color: #aebacd; text-decoration: none; transition: 0.3s; }
+        .footer-links a:hover { color: var(--nexus-green); }
     </style>
 </head>
 <body>
@@ -321,96 +255,31 @@
 
     <!-- HERO SECTION -->
     <section class="hero-section">
-        <div class="container hero-content">
+        <div class="container">
             <div class="row">
-                <div class="col-lg-10">
+                <div class="col-lg-9">
                     <div class="accent-line"></div>
                     <h1 class="hero-title">Protecting Grid Reliability Through Engineering Excellence</h1>
                     <p class="hero-subtitle">From Factory Acceptance Testing to Final Energization and Emergency Restoration, Nexus T&D Solutions safeguards the entire lifecycle of critical power infrastructure.</p>
-                    <div class="d-flex flex-wrap gap-3">
-                        <a href="#services" class="btn-nexus">Explore Services</a>
-                        <a href="#contact" class="btn-outline-nexus">Get in Touch <i class="bi bi-arrow-right ms-2"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SERVICES GRID -->
-    <section id="services">
-        <div class="container service-grid">
-            <div class="row g-4">
-                <div class="col-lg-4">
-                    <div class="service-card">
-                        <i class="bi bi-lightning-charge-fill service-icon"></i>
-                        <h4>AIS & GIS Lifecycle</h4>
-                        <p class="text-muted mb-0">Installation supervision, FAT, SAT, commissioning, and emergency restoration across 72.5 kV to 765 kV.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="service-card">
-                        <i class="bi bi-shield-fill-check service-icon"></i>
-                        <h4>Asset Reliability</h4>
-                        <p class="text-muted mb-0">Comprehensive maintenance contracts, condition assessments, protection audits, and disturbance analysis.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="service-card">
-                        <i class="bi bi-diagram-3-fill service-icon"></i>
-                        <h4>Power System Studies</h4>
-                        <p class="text-muted mb-0">Load flow, short circuit, transient stability, harmonic studies, and critical grid compliance analysis.</p>
-                    </div>
+                    <a href="#services" class="btn-nexus">Explore Services</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ABOUT SECTION -->
-    <section id="about" class="section-padding bg-light">
+    <section id="about" class="py-5 mt-5">
         <div class="container">
             <div class="row align-items-center g-5">
                 <div class="col-lg-6 pe-lg-5">
                     <h2 class="mb-4">Who We Are</h2>
                     <p class="fs-5 mb-4 text-dark">Nexus T&D Solutions Private Limited is a specialist engineering consultancy dedicated to enhancing the reliability, safety, and performance of high-voltage electrical infrastructure.</p>
-                    <p class="text-muted mb-5">We support utilities, EPC contractors, industries, and renewable developers throughout the complete lifecycle of AIS and GIS substations—from design verification and factory inspections to commissioning, maintenance, audits, and emergency restoration.</p>
-                    
-                    <div class="row g-3">
-                        <div class="col-md-6">
-                            <div class="feature-item">
-                                <div class="feature-icon"><i class="bi bi-person-workspace"></i></div>
-                                <div class="feature-text">
-                                    <h5>Safety</h5>
-                                    <p>Uncompromising commitment in everything we do.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="feature-item">
-                                <div class="feature-icon"><i class="bi bi-award-fill"></i></div>
-                                <div class="feature-text">
-                                    <h5>Quality</h5>
-                                    <p>Strict adherence to international grid standards.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="feature-item mb-md-0">
-                                <div class="feature-icon"><i class="bi bi-lock-fill"></i></div>
-                                <div class="feature-text">
-                                    <h5>Reliability</h5>
-                                    <p>Ensuring long-term dependable operation.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="feature-item mb-0">
-                                <div class="feature-icon"><i class="bi bi-star-fill"></i></div>
-                                <div class="feature-text">
-                                    <h5>Excellence</h5>
-                                    <p>Driven by technical expertise & integrity.</p>
-                                </div>
-                            </div>
-                        </div>
+                    <p class="text-muted mb-4">We support utilities, EPC contractors, industries, and renewable developers throughout the complete lifecycle of AIS and GIS substations—from design verification and factory inspections to commissioning, maintenance, audits, and emergency restoration.</p>
+                    <div class="row mt-4">
+                        <div class="col-sm-6 mb-3"><i class="bi bi-shield-check text-success me-2"></i><strong>Safety:</strong> Zero compromise</div>
+                        <div class="col-sm-6 mb-3"><i class="bi bi-patch-check-fill text-success me-2"></i><strong>Quality:</strong> Global standards</div>
+                        <div class="col-sm-6 mb-3"><i class="bi bi-clock-history text-success me-2"></i><strong>Reliability:</strong> Long-term performance</div>
+                        <div class="col-sm-6 mb-3"><i class="bi bi-star-fill text-success me-2"></i><strong>Excellence:</strong> Driven by expertise</div>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -422,8 +291,119 @@
         </div>
     </section>
 
+    <!-- SLIDABLE SERVICES SECTION -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="brand-font">Specialized Services</h2>
+                <div class="accent-line mx-auto mt-3"></div>
+            </div>
+
+            <!-- Bootstrap Carousel -->
+            <div id="servicesCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="6000">
+                
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#servicesCarousel" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#servicesCarousel" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#servicesCarousel" data-bs-slide-to="2"></button>
+                    <button type="button" data-bs-target="#servicesCarousel" data-bs-slide-to="3"></button>
+                </div>
+
+                <div class="carousel-inner">
+                    <!-- Slide 1: AIS & GIS -->
+                    <div class="carousel-item active">
+                        <div class="carousel-card">
+                            <h3 class="mb-4"><i class="bi bi-lightning-charge-fill text-success me-2"></i> AIS & GIS Lifecycle Services</h3>
+                            <ul class="service-list row">
+                                <div class="col-md-6">
+                                    <li><i class="bi bi-check2-square"></i> <strong>01 Installation Supervision:</strong> Expert site supervision ensuring compliance with OEM standards.</li>
+                                    <li><i class="bi bi-check2-square"></i> <strong>02 Factory Acceptance Testing (FAT):</strong> Independent inspection and witness testing.</li>
+                                    <li><i class="bi bi-check2-square"></i> <strong>03 Site Acceptance Testing (SAT):</strong> Verification of readiness prior to commissioning.</li>
+                                </div>
+                                <div class="col-md-6">
+                                    <li><i class="bi bi-check2-square"></i> <strong>04 Commissioning & Energization:</strong> Comprehensive testing and support.</li>
+                                    <li><i class="bi bi-check2-square"></i> <strong>05 Emergency Restoration:</strong> Rapid technical response for failures and outages.</li>
+                                </div>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2: Asset Reliability -->
+                    <div class="carousel-item">
+                        <div class="carousel-card">
+                            <h3 class="mb-4"><i class="bi bi-shield-shaded text-success me-2"></i> Asset Reliability & Protection Services</h3>
+                            <ul class="service-list row">
+                                <div class="col-md-6">
+                                    <li><i class="bi bi-check2-square"></i> Annual Maintenance Contracts (Preventive & Predictive)</li>
+                                    <li><i class="bi bi-check2-square"></i> Condition Assessment & Asset Health Evaluation</li>
+                                    <li><i class="bi bi-check2-square"></i> Protection System Audits & Relay Coordination</li>
+                                </div>
+                                <div class="col-md-6">
+                                    <li><i class="bi bi-check2-square"></i> Disturbance Analysis & Root Cause Investigation</li>
+                                    <li><i class="bi bi-check2-square"></i> Reliability Improvement Strategies</li>
+                                    <li><i class="bi bi-check2-square"></i> <strong>Focus:</strong> Circuit Breakers, GIS, Instrument Transformers, Relays, SAS/SCADA.</li>
+                                </div>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3: Power System Studies -->
+                    <div class="carousel-item">
+                        <div class="carousel-card">
+                            <h3 class="mb-4"><i class="bi bi-diagram-3-fill text-success me-2"></i> Power System Studies</h3>
+                            <ul class="service-list row">
+                                <div class="col-md-6">
+                                    <li><i class="bi bi-check2-square"></i> Load Flow Studies</li>
+                                    <li><i class="bi bi-check2-square"></i> Short Circuit Studies</li>
+                                    <li><i class="bi bi-check2-square"></i> Transient Stability Studies</li>
+                                    <li><i class="bi bi-check2-square"></i> Protection Coordination Studies</li>
+                                </div>
+                                <div class="col-md-6">
+                                    <li><i class="bi bi-check2-square"></i> Arc Flash Studies</li>
+                                    <li><i class="bi bi-check2-square"></i> Harmonic Studies</li>
+                                    <li><i class="bi bi-check2-square"></i> Renewable Integration Studies</li>
+                                    <li><i class="bi bi-check2-square"></i> Grid Compliance Studies</li>
+                                </div>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Slide 4: Training & Domains -->
+                    <div class="carousel-item">
+                        <div class="carousel-card">
+                            <h3 class="mb-4"><i class="bi bi-person-video3 text-success me-2"></i> Technical Training Programs</h3>
+                            <ul class="service-list row">
+                                <div class="col-md-6">
+                                    <li><i class="bi bi-check2-square"></i> AIS & GIS Technology</li>
+                                    <li><i class="bi bi-check2-square"></i> Protection Systems</li>
+                                    <li><i class="bi bi-check2-square"></i> Commissioning Practices</li>
+                                </div>
+                                <div class="col-md-6">
+                                    <li><i class="bi bi-check2-square"></i> Maintenance Methodologies</li>
+                                    <li><i class="bi bi-check2-square"></i> Substation Safety</li>
+                                    <li><i class="bi bi-check2-square"></i> IEC 61850 Applications</li>
+                                </div>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Carousel Controls -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#servicesCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#servicesCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
     <!-- WHY CHOOSE US -->
-    <section id="why-us" class="section-padding">
+    <section id="why-us" class="py-5 my-5">
         <div class="container">
             <div class="row align-items-center g-5">
                 <div class="col-lg-6 order-2 order-lg-1">
@@ -433,39 +413,29 @@
                 </div>
                 <div class="col-lg-6 order-1 order-lg-2 ps-lg-5">
                     <h2 class="mb-5">Why Choose Nexus?</h2>
-                    
-                    <div class="feature-item">
-                        <div class="feature-icon"><i class="bi bi-check-circle-fill"></i></div>
-                        <div class="feature-text">
-                            <p class="fs-6 text-dark"><strong>Deep domain expertise</strong> in AIS & GIS systems spanning 11 kV to 765 kV infrastructure.</p>
-                        </div>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-icon"><i class="bi bi-check-circle-fill"></i></div>
-                        <div class="feature-text">
-                            <p class="fs-6 text-dark"><strong>Extensive project portfolio</strong> supporting major utilities and EPC contractors worldwide.</p>
-                        </div>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-icon"><i class="bi bi-check-circle-fill"></i></div>
-                        <div class="feature-text">
-                            <p class="fs-6 text-dark"><strong>OEM Independent status</strong>, ensuring objective and entirely unbiased technical advice.</p>
-                        </div>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-icon"><i class="bi bi-check-circle-fill"></i></div>
-                        <div class="feature-text">
-                            <p class="fs-6 text-dark"><strong>Rapid response capabilities</strong> for critical emergency restoration and fault analysis.</p>
-                        </div>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-icon"><i class="bi bi-check-circle-fill"></i></div>
-                        <div class="feature-text">
-                            <p class="fs-6 text-dark"><strong>Uncompromising culture</strong> dedicated to operational safety and execution quality.</p>
-                        </div>
-                    </div>
-                    
+                    <ul class="service-list">
+                        <li><i class="bi bi-check-circle-fill"></i> <strong>Deep domain expertise</strong> in AIS & GIS systems (11 kV to 765 kV).</li>
+                        <li><i class="bi bi-check-circle-fill"></i> <strong>Extensive utility</strong> and EPC experience.</li>
+                        <li><i class="bi bi-check-circle-fill"></i> <strong>OEM Independent</strong> and unbiased technical advice.</li>
+                        <li><i class="bi bi-check-circle-fill"></i> <strong>Rapid response</strong> for emergency support.</li>
+                        <li><i class="bi bi-check-circle-fill"></i> <strong>Strong safety</strong> and quality culture.</li>
+                        <li><i class="bi bi-check-circle-fill"></i> <strong>Process-driven</strong> execution methodology.</li>
+                    </ul>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CLIENT BANNER -->
+    <section class="client-banner">
+        <div class="container text-center">
+            <h4 class="mb-4 text-white">PROUDLY SERVING</h4>
+            <div class="row justify-content-center g-3 text-white-50 small font-weight-bold text-uppercase">
+                <div class="col-6 col-md-2">Transmission Utilities</div>
+                <div class="col-6 col-md-2">State & Central Utilities</div>
+                <div class="col-6 col-md-2">Heavy Industries</div>
+                <div class="col-6 col-md-2">Renewable Developers</div>
+                <div class="col-6 col-md-2">EPC Contractors & OEMs</div>
             </div>
         </div>
     </section>
@@ -476,11 +446,11 @@
             <div class="row g-5">
                 <div class="col-lg-4 pe-lg-5">
                     <h4 class="brand-font text-white mb-4">NEXUS T&D</h4>
-                    <p class="footer-text">Engineering Confidence. Operational Excellence. Your trusted technical partner for transmission and distribution asset owners.</p>
+                    <p class="text-white-50">Engineering Confidence. Operational Excellence. Your trusted technical partner for transmission and distribution asset owners.</p>
                 </div>
                 
                 <div class="col-lg-2 col-md-4">
-                    <h5 class="footer-heading">Company</h5>
+                    <h5 class="text-white mb-4">Company</h5>
                     <ul class="footer-links">
                         <li><a href="#about">About Us</a></li>
                         <li><a href="#services">Our Services</a></li>
@@ -489,43 +459,37 @@
                 </div>
                 
                 <div class="col-lg-3 col-md-4">
-                    <h5 class="footer-heading">Contact Us</h5>
-                    <ul class="footer-links footer-contact">
-                        <li class="d-flex mb-3">
-                            <i class="bi bi-envelope-fill mt-1 me-3"></i>
-                            <a href="mailto:info@nexustdsolutions.com">info@nexustdsolutions.com</a>
-                        </li>
-                        <li class="d-flex mb-3">
-                            <i class="bi bi-telephone-fill mt-1 me-3"></i>
-                            <span class="footer-text">+91 00000 00000</span>
-                        </li>
-                        <li class="d-flex">
-                            <i class="bi bi-globe mt-1 me-3"></i>
-                            <a href="http://www.nexustdsolutions.com">www.nexustdsolutions.com</a>
-                        </li>
+                    <h5 class="text-white mb-4">Contact Us</h5>
+                    <ul class="footer-links">
+                        <li><i class="bi bi-envelope-fill me-2 text-success"></i> <a href="mailto:info@nexustdsolutions.com">info@nexustdsolutions.com</a></li>
+                        <li><i class="bi bi-telephone-fill me-2 text-success"></i> <span class="text-white-50">+91 00000 00000</span></li>
+                        <li><i class="bi bi-globe me-2 text-success"></i> <a href="[http://www.nexustdsolutions.com](http://www.nexustdsolutions.com)">[www.nexustdsolutions.com](https://www.nexustdsolutions.com)</a></li>
                     </ul>
                 </div>
                 
                 <div class="col-lg-3 col-md-4">
-                    <h5 class="footer-heading">Corporate Office</h5>
-                    <ul class="footer-links footer-contact">
-                        <li class="d-flex">
-                            <i class="bi bi-geo-alt-fill mt-1 me-3"></i>
-                            <span class="footer-text">123, Power House Road,<br>Chennai – 600 123,<br>Tamil Nadu, India</span>
+                    <h5 class="text-white mb-4">Corporate Office</h5>
+                    <ul class="footer-links">
+                        <li class="d-flex text-white-50">
+                            <i class="bi bi-geo-alt-fill me-2 mt-1 text-success"></i>
+                            <span>123, Power House Road,<br>Chennai – 600 123,<br>Tamil Nadu, India</span>
                         </li>
                     </ul>
                 </div>
             </div>
-            
-            <div class="copyright">
+            <div class="text-center text-white-50 mt-5 pt-4 border-top border-secondary small">
                 &copy; 2026 Nexus T&D Solutions Private Limited. All Rights Reserved.
             </div>
         </div>
     </footer>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap JS (Required for Carousel Functionality) -->
+    <script src="[https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js](https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js)"></script>
 </body>
 </html>
+
+```
+
+```
 
 ```
